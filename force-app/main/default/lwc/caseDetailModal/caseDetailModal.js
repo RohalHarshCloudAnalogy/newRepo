@@ -27,6 +27,6 @@ export default class CaseDetailModal extends LightningElement {
     }
 
     handleError(event) {
-        console.error('Error updating case', event.detail);
+        console.error('Error updating case in line 30', event.detail);
     }
 }
