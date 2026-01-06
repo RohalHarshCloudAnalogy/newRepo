@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Upload Files">
+        
+        <lightning-input
+            type="file"
+             label="Attach Files"
+             onchange={handleFilesUploaded}
+             multiple
+        >
+        </lightning-input>
+
+        <template if:true={imageUrl}>
+            <img src={imageUrl} alt="no image" />
+        </template>
+
+
+
+    </lightning-card>
+</template>

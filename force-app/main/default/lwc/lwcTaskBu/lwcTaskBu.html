@@ -1,0 +1,119 @@
+<!-- <template>
+    <lightning-button label="Send Email" onclick = {handleClick}></lightning-button>
+
+    <c-modal-component is-email-send={isEmailSend} onclosemodel={handleModalClose}></c-modal-component>
+</template> -->
+
+
+<template>
+     <lightning-button label="Send Email" onclick ={handleClick}></lightning-button>
+
+   <!-- <template if:true={isEmailSend}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal_container">
+                <lightning-modal-header label="Send Email" ></lightning-modal-header>
+                
+                <lightning-modal-body>
+                    <lightning-input label="Email" type="email" value={sendingEmail} name="email" onchange={handleChangeOfData}></lightning-input>
+                    <lightning-input label="Subject" type="text" value={setSubject} name="subject" onchange={handleChangeOfData}></lightning-input>
+                
+                    <lightning-input-rich-text  title="Bodyyyyyyyyyyyyyy" label="test label" value={setBody} name="body" onchange={handleChangeOfData}></lightning-input-rich-text>
+                </lightning-modal-body>
+
+
+                <lightning-modal-footer>
+                    <lightning-button label="Send" onclick={handleSendEmail}>
+                        </lightning-button>
+                    <lightning-button label="Cancel" onclick={handleClickClose}></lightning-button>
+
+                </lightning-modal-footer>
+            </div>
+        </section>
+
+    </template> -->
+
+<!-- //standard modal -->
+    <!-- <template>
+        <lightning-button label="Send Email" onclick = {handleClick}></lightning-button>
+    
+        <template if:true={isEmailSend}>
+            
+                <div class="slds-modal_container">
+                    <lightning-modal-header label="Send Email" ></lightning-modal-header>
+                    
+                    <lightning-modal-body>
+                        <lightning-input label="Email" type="email" value={sendingEmail} name="email" onchange={handleChangeOfData}></lightning-input>
+                        <lightning-input label="Subject" type="text" value={setSubject} name="subject" onchange={handleChangeOfData}></lightning-input>
+                    
+                        <lightning-input-rich-text  title="Bodyy" label="test label" value={setBody} name="body" onchange={handleChangeOfData}></lightning-input-rich-text>
+                    </lightning-modal-body>
+    
+    
+                    <lightning-modal-footer>
+                        <lightning-button label="Send" onclick={handleSendEmail}>
+                            </lightning-button>
+                        <lightning-button label="Cancel" onclick={handleClickClose}></lightning-button>
+    
+                    </lightning-modal-footer>
+                </div>
+
+    
+        </template> -->
+<!-- //custom modal  -->
+
+     
+    <template if:true={isEmailSend}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title slds-hyphenate">Send Email</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                   
+                        <lightning-input label="Email" type="email" value={sendingEmail} name="email" onchange={handleChangeOfData}></lightning-input>
+                        <lightning-input label="Subject" type="text" value={setSubject} name="subject" onchange={handleChangeOfData}></lightning-input>
+                        <lightning-textarea value={setBody} name="body" onchange={handleChangeOfData}></lightning-textarea>
+                     
+                     
+                        <div style="cursor:pointer">
+                            
+                            <lightning-icon title="Formatting Options" icon-name="utility:text_background_color" variant="brand" onclick={handleFormattedText}></lightning-icon>
+
+                            <template if:true={isFormatVisible}>
+                                <lightning-icon icon-name="utility:bold" size="x-small" variant="brand" ></lightning-icon>
+                                <lightning-icon icon-name="utility:italic" size="x-small" variant="brand" ></lightning-icon>
+                                <lightning-icon title="Undo(ctrl+z)" icon-name="utility:undo" size="x-small" variant="brand" ></lightning-icon>
+                                <lightning-icon title="redo(ctrl+y)" icon-name="utility:redo" size="x-small" variant="brand" ></lightning-icon>
+                                <lightning-icon icon-name="utility:underline" size="x-small" variant="brand" ></lightning-icon>
+                            </template>
+                            <lightning-icon icon-name="utility:edit" variant="brand" size="x-small"></lightning-icon>
+                            <lightning-icon icon-name="utility:attach" size="x-small" variant="brand" onclick={handleAttachClick}></lightning-icon>
+                            
+                            
+                            <lightning-icon icon-name="utility:link" size="x-small" variant="brand"  ></lightning-icon>
+                            <lightning-icon icon-name="utility:emoji" size="x-small" variant="brand"  ></lightning-icon>
+                            <lightning-icon icon-name="utility:image" size="x-small" variant="brand" ></lightning-icon>
+                            <lightning-icon icon-name="utility:google_drive" size="x-small" variant="brand"  ></lightning-icon>
+                            
+                            <lightning-icon icon-name="utility:warning" size="x-small" variant="brand"  ></lightning-icon>
+                            <lightning-icon icon-name="utility:down" size="x-small" variant="brand"  label="Sans Serif">Sans Serif</lightning-icon>
+                            <lightning-icon icon-name="utility:down" size="x-small" variant="brand"  label="TT"> TT</lightning-icon>
+                         
+
+                        </div>
+
+                        
+
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="brand" label="Sendd" onclick={handleSendEmail}>
+                        </lightning-button>
+                    <lightning-button variant="neutral" label="Cancel" onclick={handleModalClose}>
+                        </lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+</template>

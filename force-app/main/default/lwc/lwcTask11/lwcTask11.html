@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Accounts">
+        <lightning-combobox 
+            options={accounts}
+            value={selectedAcc}
+            onchange={handleChange}>
+        </lightning-combobox>
+    </lightning-card>
+
+
+    <lightning-card title="Contacts">
+        <lightning-combobox 
+            options={contacts}
+            >
+        </lightning-combobox>
+    </lightning-card>
+
+
+
+    <lightning-card title="Opportunity">
+        <lightning-combobox 
+            options={opportunities}
+            >
+        </lightning-combobox>
+    </lightning-card>
+</template>

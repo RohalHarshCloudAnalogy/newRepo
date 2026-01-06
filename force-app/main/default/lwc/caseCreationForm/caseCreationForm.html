@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Create New Case" icon-name="standard:case">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <!-- Left Column -->
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="Case Subject" value={subject} onchange={handleChange} data-id="subject" class="slds-m-bottom_small"></lightning-input>
+
+                    <lightning-combobox label="Priority" value={priority} options={priorityOptions} onchange={handleChange} data-id="priority" class="slds-m-bottom_small"></lightning-combobox>
+
+                    <lightning-combobox label="Contact"
+                    value={contactId}
+                    options={contactOptions}
+                    onchange={handleChange}
+                    data-id="contactId" class="slds-m-bottom_small"></lightning-combobox>
+
+
+                    <lightning-textarea label="Description" value={description} onchange={handleChange} data-id="description" class="slds-m-bottom_small"></lightning-textarea>
+
+                    <lightning-combobox label="Status" value={status} options={statusOptions} onchange={handleChange} data-id="status" class="slds-m-bottom_small"></lightning-combobox>
+
+                    <lightning-button label="Create Case" onclick={createCase} variant="brand"></lightning-button>
+                </div>
+
+               
+            </div>
+
+            
+        </div>
+    </lightning-card>
+</template>

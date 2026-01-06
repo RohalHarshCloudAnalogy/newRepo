@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Account Creation">
+        <lightning-input label="Name" name = "name" value={name} onchange={handleChange}></lightning-input>
+        <lightning-input label="Rating" name="rating" value={rating} onchange={handleChange}></lightning-input>
+        <lightning-input label="Phone" name="phone" value={phone} onchange={handleChange}></lightning-input>
+        <lightning-input label="Industry" name="industry" value={industry} onchange={handleChange}></lightning-input>
+        <lightning-input label="Location" name="location" value={location} onchange={handleChange}></lightning-input>
+        
+        <lightning-button label="Save Account" variant="brand" onclick={handleSave}></lightning-button>
+    </lightning-card>
+</template>

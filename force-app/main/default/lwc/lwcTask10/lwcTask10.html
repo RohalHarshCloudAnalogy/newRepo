@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Accounts">
+        <lightning-combobox 
+            options={options}
+            value={selectedValue}
+            onchange={handleChange}
+        >
+        </lightning-combobox>
+    </lightning-card>
+
+
+    <lightning-card title="Related Contact">
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}>
+
+        </lightning-datatable>
+    </lightning-card>
+</template>

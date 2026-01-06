@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-input label="UserName" value={userName} onchange={handleUNChange} ></lightning-input>
+        <lightning-input label="Passsword" type="password" value={password} onchange ={handlePasswordChange} ></lightning-input>
+    </lightning-card>
+
+    
+    <lightning-button label="Submitt" variant="brand" onclick={handleSubmit}></lightning-button>
+
+
+    <template if:true={successMessage}>{successMessage}</template>
+
+    <template if:true={errorMessage}> {errorMessage} </template>
+    
+</template>

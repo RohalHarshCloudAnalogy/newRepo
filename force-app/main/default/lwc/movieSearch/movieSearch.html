@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item padding="around-small" size="3">
+                <lightning-combobox 
+                    name="type"
+                    label="Type"
+                    value={selectedType}
+                    placeholder="Selected Type"
+                    options={typeOptions}
+                    onchange={handleChange}>
+
+
+                </lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small" size="7">
+                <lightning-input
+                    name="search"
+                    label="Enter Search Item"
+                    placeholder="Search for Movie/Series"
+                    type="search"
+                    is-loading={loading}
+                    onchange={handleChange}    >
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small" size="3"></lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <div></div>
+</template>

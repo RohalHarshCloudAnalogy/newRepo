@@ -1,0 +1,10 @@
+<template>
+   <template if:true={isVisible}>
+    <lightning-button label="Button" onclick={handleClick}></lightning-button>
+   
+
+    <c-child-l-w-c if:true={isVisible}></c-child-l-w-c>
+   </template>
+
+   <h1>{checkOrder}</h1>
+</template>

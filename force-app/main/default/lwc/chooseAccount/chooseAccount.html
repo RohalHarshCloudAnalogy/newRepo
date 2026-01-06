@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Choose Account">
+        <lightning-combobox options={options} value={selectedValue} onchange={handleChange}></lightning-combobox>
+    </lightning-card>
+
+    <template if:true={selectedValue}>
+        <c-show-contact account-id={selectedValue}></c-show-contact>
+    </template>
+</template>

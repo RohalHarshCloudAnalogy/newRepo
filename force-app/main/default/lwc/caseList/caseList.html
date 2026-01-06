@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Open Cases" icon-name="standard:case">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Search" value={searchKey} onchange={handleSearch}></lightning-input>
+
+            <div class="slds-grid slds-gutters slds-m-top_medium">
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Priority"
+                        value={priorityFilter}
+                        options={priorityOptions}
+                        onchange={handlePriorityChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Status"
+                        value={statusFilter}
+                        options={statusOptions}
+                        onchange={handleStatusChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+
+            <lightning-datatable
+                key-field="Id"
+                data={filteredCases}
+                columns={columns}
+                onsort={handleSort}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onrowaction={handleViewCase}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+    <!-- MODAL -->
+     <c-case-detail-modal
+        case-id={caseId}
+        is-modal-open={isModalOpen}
+        onmodalclose={handleCloseModal}>
+    </c-case-detail-modal>
+</template>

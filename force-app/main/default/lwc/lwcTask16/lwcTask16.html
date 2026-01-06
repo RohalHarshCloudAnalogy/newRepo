@@ -1,0 +1,17 @@
+<template>
+    <lightning-input type="search" value={searchVal} onchange={setVal} placeholder="search"> </lightning-input>
+    <lightning-button label="search" onclick={searchThis}></lightning-button>
+    <lightning-datatable
+        key-field="Id"
+        data={account}
+        columns={columns}
+        
+        onsort={handleSort}
+        sorted-by={sortedBy}
+        sorted-direction={sortedDirection}        >
+    </lightning-datatable>
+
+
+
+    
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <h1>{searchTextChild2}</h1>
+
+    <h1>{accId}  {accName}</h1>
+    <div style="height: 300px">
+        <lightning-datatable
+            columns={columns}
+            data = {data}
+            key-field="Id" 
+            hide-checkbox-column="true"   
+            show-row-number-column="true" 
+            onrowaction={handleRowAction}
+        >
+        
+        </lightning-datatable>
+    </div>
+</template>

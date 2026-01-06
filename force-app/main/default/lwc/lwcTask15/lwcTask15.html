@@ -1,0 +1,15 @@
+<template>
+    <lightning-button label="Open Modall" onclick={openModal}></lightning-button>
+
+    <template if:true={isModalOpen}>
+        <lightning-input label="Close Date" type="date" onchange={handleChange}></lightning-input>
+
+
+        <lightning-button label="Save" onclick={handleSave}></lightning-button>
+
+
+
+
+        <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+    </template>
+</template>

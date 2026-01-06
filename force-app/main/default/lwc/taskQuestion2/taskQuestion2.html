@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="TaskQuestion2">
+        <lightning-input label="FirstName" name="First_Name" value={First_Name} onchange={handleChange}></lightning-input>
+        <lightning-input label="LastName" name="Last_Name" value={Last_Name} onchange={handleChange}></lightning-input>
+        <lightning-input label="Email" name="Email" value={Email} onchange={handleChange}></lightning-input>
+        <lightning-input label="Phone" name="Phone" value={Phone} onchange={handleChange}></lightning-input>
+        <lightning-input label="Title" name="Title" value={Title} onchange={handleChange}></lightning-input>
+
+        <p>this is the data</p>
+        <p>{First_Name} {Last_Name} {Email} {Phone} {Title}</p>
+    </lightning-card>
+</template>

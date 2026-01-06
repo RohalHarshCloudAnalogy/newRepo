@@ -1,0 +1,14 @@
+<template>
+    <lightning-datatable
+        key-field="Id"
+        data={accounts}
+        columns={columns}
+
+       
+        onsort={handleSort}    
+        sorted-by={sortedBy}
+        sorted-direction={sortedDirection}
+        
+    >
+    </lightning-datatable>
+</template>

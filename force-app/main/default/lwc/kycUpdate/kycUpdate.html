@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Upload KYC Document" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Document Type" value={docType} onchange={handleDocTypeChange}></lightning-input>
+            
+            <template if:true={dummyRecordId}>
+                <lightning-file-upload
+                    label="Upload Document"
+                    name="fileUploader"
+                    accept={acceptedFormats}
+                    record-id={dummyRecordId}
+                    onuploadfinished={handleUploadFinished}>
+                </lightning-file-upload>
+            </template>
+
+            <template if:false={dummyRecordId}>
+                <lightning-button 
+                    label="Create Record & Upload" 
+                    onclick={createRecordAndUpload} 
+                    class="slds-m-top_small">
+                </lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

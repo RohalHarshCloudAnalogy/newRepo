@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Account">
+        <lightning-combobox
+            options={accounts}
+            value={selectedAccount}
+            onchange={handleChange}
+        >
+        </lightning-combobox>
+
+
+        <template if:true={selectedAccount}>
+            <lightning-input disabled value={totalOpp} type="Number" name="TotalOpp" label="Total Opportunity"></lightning-input>
+            <lightning-input disabled value={totalSum} type="Number" name="TotalSum" label="Sum of Amount"></lightning-input>
+        </template>
+
+    </lightning-card>
+</template>

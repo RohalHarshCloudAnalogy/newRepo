@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Objects">
+        <lightning-combobox 
+            label="Select Object"
+            options={objects}
+            value={selectedValue}
+            onchange={handleChange}
+        >
+
+        </lightning-combobox>
+    </lightning-card>
+
+    <template if:true={fields}>
+        <lightning-card title="Related Contact">
+            <lightning-combobox
+                options={fields}
+                label="Select Fields"
+                value={selectedField}
+                onchange={handleFieldChange}
+            >
+            </lightning-combobox>
+        </lightning-card>
+    
+    </template>
+
+    <template if:true={fieldDetails}>
+            <lightning-card>
+            
+                <p class="slds-p-around_medium">
+                    <strong>Field Name:</strong> {fieldDetails.label} <br/>
+                    <strong>API Name:</strong> {fieldDetails.apiName} <br/>
+                    <strong>Type:</strong> {fieldDetails.type}    
+                </p>
+           
+            </lightning-card>
+    </template>
+        
+    
+</template>

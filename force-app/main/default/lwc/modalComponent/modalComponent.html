@@ -1,0 +1,24 @@
+<template>
+    <template if:true={isEmailSend}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal_container">
+            <lightning-modal-header label="Send Email" ></lightning-modal-header>
+            
+            <lightning-modal-body>
+                <lightning-input label="Email" type="email" value={sendingEmail} name="email" onchange={handleChangeOfData}></lightning-input>
+                <lightning-input label="Subject" type="text" value={setSubject} name="subject" onchange={handleChangeOfData}></lightning-input>
+            
+                <lightning-input-rich-text  title="Bodyyyyyyyyyyyyyy" label="test label" value={setBody} name="body" onchange={handleChangeOfData}></lightning-input-rich-text>
+            </lightning-modal-body>
+
+
+            <lightning-modal-footer>
+                <lightning-button label="Send" onclick={handleSendEmail}>
+                    </lightning-button>
+                <lightning-button label="Cancel" onclick={handleClickClose}></lightning-button>
+
+            </lightning-modal-footer>
+        </div>
+    </section>
+    </template>
+</template>

@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Account" icon-name="standard:account">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Account Name</th>
+                    <th>Account Number</th>
+                    <th>Account Phone</th>
+                    <th>Account Website</th>
+                    <th>Action</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={rows} for:item="row" for:index="index">
+                    <tr key={row.Id}>
+                        <td>{index}</td>
+                        <td><lightning-input value={row.name} onchange={handleInputChange} data-id={row.Id} data-field="name"></lightning-input></td>
+                        <td><lightning-input value={row.number}  onchange={handleInputChange} data-id={row.Id} data-field="number"></lightning-input></td>
+                        <td><lightning-input value={row.phone} onchange={handleInputChange} data-id={row.Id} data-field="phone"></lightning-input></td>
+                        <td><lightning-input value={row.website} onchange={handleInputChange} data-id={row.Id} data-field="website"></lightning-input></td>
+                        <td>
+                            <lightning-button icon-name="utility:delete" variant="destructive" title="Delete" onclick={handleDeleteRow} data-id={row.Id}></lightning-button>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+        <div>
+            <lightning-button label="Add" onclick={handleAddRow}> </lightning-button>
+            <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+        </div>
+        
+    </lightning-card>
+</template>
